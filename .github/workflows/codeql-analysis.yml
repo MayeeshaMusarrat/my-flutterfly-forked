@@ -22,8 +22,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language:
-          - Dart
         flavor:
           - dev
           - prod
@@ -43,7 +41,7 @@ jobs:
         id: setup-flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: "3.10.5"
+          flutter-version: stable
 
       - name: Validate Flutter Installation
         run: flutter doctor
