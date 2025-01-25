@@ -46,3 +46,7 @@ app.*.map.json
 
 # environment file
 env/
+
+# Keystore files
+*.jks
+*.keystore
