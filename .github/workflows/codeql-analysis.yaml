@@ -41,8 +41,12 @@ jobs:
         strategy:
           matrix:
             flavor: [dev, prod, staging]
-        run: flutter build apk --flavor ${{ matrix.flavor }} --debug
-
+            build-type: [debug, release]
+        run: |
+          if [ "${{ matrix.build-type }}" = "release" ] && [ "${{ matrix.flavor }}" = "prod" ]; then
+            echo "::warning::Performing security-sensitive release build for production"
+          fi
+          flutter build apk --flavor ${{ matrix.flavor }} --${{ matrix.build-type }}
       # Step 6: Build Web (single build)
       - name: Build Flutter Web
         run: flutter build web
