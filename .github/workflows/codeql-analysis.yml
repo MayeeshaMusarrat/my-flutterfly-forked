@@ -43,7 +43,10 @@ jobs:
         id: setup-flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: "stable"
+          flutter-version: "3.10.5"
+
+      - name: Validate Flutter Installation
+        run: flutter doctor
 
       # Step 3: Initialize CodeQL tools
       - name: Initialize CodeQL
@@ -51,7 +54,7 @@ jobs:
         uses: github/codeql-action/init@v3
         with:
           languages: ${{ matrix.language }}
-          source-root: src
+          source-root: lib
           queries: +security-and-quality
           config-file: ./.github/codeql/codeql-config.yml
 
