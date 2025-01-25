@@ -1,0 +1,58 @@
+name: "CodeQL Analysis"
+
+on:
+  push:
+    branches: [ "main" ] 
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '0 0 * * 0' 
+
+jobs:
+  analyze:
+    name: Analyze code with CodeQL
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Flutter environment
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "stable"
+
+      # Step 3: Initialize CodeQL tools
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
+        with:
+          languages: javascript, kotlin, swift
+          queries: +security-and-quality
+
+      # Step 4: Install Flutter dependencies
+      - name: Install Flutter dependencies
+        run: flutter pub get
+
+      # Step 5: Build APKs for Android (with flavors)
+      - name: Build Flutter APK for Android (dev flavor)
+        run: flutter build apk --flavor dev --debug
+
+      - name: Build Flutter APK for Android (prod flavor)
+        run: flutter build apk --flavor prod --debug
+
+      - name: Build Flutter APK for Android (staging flavor)
+        run: flutter build apk --flavor staging --debug
+
+      # Step 6: Build Web (single build)
+      - name: Build Flutter Web
+        run: flutter build web
+
+      # Step 7: Build iOS (single build)
+      - name: Build Flutter iOS
+        run: flutter build ios --no-codesign
+
+      # Step 8: Perform the CodeQL analysis
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
