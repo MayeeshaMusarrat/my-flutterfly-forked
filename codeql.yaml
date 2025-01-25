@@ -2,11 +2,11 @@ name: "CodeQL Analysis"
 
 on:
   push:
-    branches: [ "main" ] 
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
   schedule:
-    - cron: '0 0 * * 0' 
+    - cron: '0 0 * * 0'
 
 jobs:
   analyze:
@@ -36,14 +36,11 @@ jobs:
         run: flutter pub get
 
       # Step 5: Build APKs for Android (with flavors)
-      - name: Build Flutter APK for Android (dev flavor)
-        run: flutter build apk --flavor dev --debug
-
-      - name: Build Flutter APK for Android (prod flavor)
-        run: flutter build apk --flavor prod --debug
-
-      - name: Build Flutter APK for Android (staging flavor)
-        run: flutter build apk --flavor staging --debug
+      - name: Build Flutter APKs
+        strategy:
+          matrix:
+            flavor: [dev, prod, staging]
+        run: flutter build apk --flavor ${{ matrix.flavor }} --debug
 
       # Step 6: Build Web (single build)
       - name: Build Flutter Web
