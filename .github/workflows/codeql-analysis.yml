@@ -1,0 +1,87 @@
+name: CodeQL
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+  security-events: write
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        flavor:
+          - dev
+          - prod
+          - staging
+        build-type:
+          - debug
+          - release
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Flutter environment
+      - name: Set up Flutter
+        id: setup-flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.22.2"
+
+      - name: Validate Flutter Installation
+        run: flutter doctor
+
+      # Step 3: Initialize CodeQL tools
+      - name: Initialize CodeQL
+        id: initialize
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+          source-root: lib
+          queries: +security-and-quality
+          config-file: ./.github/codeql/codeql-config.yml
+
+      # Step 4: Install Flutter dependencies
+      - name: Install Flutter dependencies
+        id: install-dependencies
+        run: flutter pub get
+
+      # Step 5: Build APKs for Android (with flavors and build types)
+      - name: Build Flutter APKs
+        id: build-apks
+        run: |
+          echo "Building APK for flavor: ${{ matrix.flavor }} and build type: ${{ matrix.build-type }}"
+          if [ "${{ matrix.build-type }}" = "release" ] && [ "${{ matrix.flavor }}" = "prod" ]; then
+            echo "::warning::Performing security-sensitive release build for production"
+          fi
+          flutter build apk --flavor ${{ matrix.flavor }} --${{ matrix.build-type }}
+
+      # Step 6: Build Web (single build)
+      - name: Build Flutter Web
+        id: build-web
+        run: flutter build web
+
+      # Step 7: Build iOS (single build)
+      - name: Build Flutter iOS
+        id: build-ios
+        run: flutter build ios --no-codesign
+
+      # Step 8: Perform the CodeQL Analysis
+      - name: Perform CodeQL Analysis
+        id: analyze
+        uses: github/codeql-action/analyze@v3

@@ -1,0 +1,10 @@
+query-filters:
+  - exclude:
+      problem.severity:
+        - warning
+        - recommendation
+      tags:
+        - security
+paths-ignore:
+  - '**/test/**'
+  - '**/build/**'
