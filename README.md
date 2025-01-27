@@ -28,36 +28,6 @@
     <a href="https://github.com/Learnathon-By-Geeky-Solutions/flutterfly/issues/new?labels=enhancement&template=feature-request.md">Request Feature</a>
 </p>
 
-  <!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">➡️ Visit Our Wiki</a>
-    </li>
-    <li>
-      <a href="#problem-statement">⚠️ Problem Statement</a>
-    </li>
-    <li>
-      <a href="#features">📱 Features</a>
-    </li>
-    <li>
-      <a href="#technology-stack">⚒️ Technology Stack</a>
-    </li>
-    <li>
-      <a href="#getting-started">🚀 Getting Started</a>
-    </li>
-    <li>
-      <a href="#license">📝 License</a>
-    </li>
-    <li>
-      <a href="#top-contributors">🌟 Top Contributors</a>
-    </li>
-    <li>
-      <a href="#team-information-flutterfly">🦋 Team Information: Flutterfly</a>
-    </li>
-  </ol>
-</details>
 
 ## ➡️ Visit Our Wiki
 
@@ -129,18 +99,18 @@ flutter doctor
 
 4. **Run the app**:
    Use the following commands to run the app for specific flavors:
-    - **Development**:
-      ```sh
-      flutter run --flavor dev 
-      ```
-    - **Staging**:
-      ```sh
-      flutter run --flavor staging 
-      ```
-    - **Production**:
-      ```sh
-      flutter run --flavor prod
-      ```
+   - **Development**:
+     ```sh
+     flutter run --flavor dev 
+     ```
+   - **Staging**:
+     ```sh
+     flutter run --flavor staging 
+     ```
+   - **Production**:
+     ```sh
+     flutter run --flavor prod
+     ```
 
 ### Setting Up Flavors
 The Flutterfly project is configured with multiple flavors to manage environments effectively. Each flavor has its corresponding configuration in the `android` folder.
