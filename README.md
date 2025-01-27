@@ -174,7 +174,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [issues-shield]: https://img.shields.io/github/issues/Learnathon-By-Geeky-Solutions/flutterfly.svg?style=for-the-badge
 [issues-url]: https://github.com/Learnathon-By-Geeky-Solutions/flutterfly/issues
 [license-shield]: https://img.shields.io/github/license/Learnathon-By-Geeky-Solutions/flutterfly.svg?style=for-the-badge
-[license-url]: https://github.com/Learnathon-By-Geeky-Solutions/flutterfly/blob/master/LICENSE.txt
+[license-url]: https://github.com/Learnathon-By-Geeky-Solutions/flutterfly/blob/master/LICENSE
 [FigJam]: https://img.shields.io/badge/FigJam-F24E1E?style=for-the-badge&logo=figma&logoColor=white
 [FigJam-url]: https://www.figma.com/figjam/
 
