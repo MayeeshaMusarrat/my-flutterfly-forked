@@ -9,9 +9,9 @@
 [![Unlicense License][license-shield]][license-url]
 <br>
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=Learnathon-By-Geeky-Solutions_flutterfly&metric=alert_status&style=for-the-badge)](https://sonarcloud.io/dashboard?id=Learnathon-By-Geeky-Solutions_flutterfly)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Learnathon-By-Geeky-Solutions_flutterfly&metric=vulnerabilities)](https://sonarcloud.io/component_measures/domain/Coverage?id=LLearnathon-By-Geeky-Solutions_flutterfly)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Learnathon-By-Geeky-Solutions_flutterfly&metric=bugs)](https://sonarcloud.io/component_measures/domain/Coverage?id=LLearnathon-By-Geeky-Solutions_flutterfly)
-[![Security](https://sonarcloud.io/api/project_badges/measure?project=Learnathon-By-Geeky-Solutions_flutterfly&metric=security_rating)](https://sonarcloud.io/component_measures/domain/Coverage?id=LLearnathon-By-Geeky-Solutions_flutterfly)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Learnathon-By-Geeky-Solutions_flutterfly&metric=vulnerabilities)](https://sonarcloud.io/component_measures/domain/Vulnerability?id=Learnathon-By-Geeky-Solutions_flutterfly)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Learnathon-By-Geeky-Solutions_flutterfly&metric=bugs)](https://sonarcloud.io/component_measures/domain/Bugs?id=LLearnathon-By-Geeky-Solutions_flutterfly)
+[![Security](https://sonarcloud.io/api/project_badges/measure?project=Learnathon-By-Geeky-Solutions_flutterfly&metric=security_rating)](https://sonarcloud.io/component_measures/domain/Security?id=LLearnathon-By-Geeky-Solutions_flutterfly)
 
 </div>
 
@@ -142,7 +142,7 @@ The Flutterfly project is configured with multiple flavors to manage environment
 <!-- LICENSE -->
 ## ⚖️ License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See `LICENSE` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
