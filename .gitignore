@@ -50,3 +50,6 @@ env/
 # Keystore files
 *.jks
 *.keystore
+
+# Keys
+/android/key.properties
