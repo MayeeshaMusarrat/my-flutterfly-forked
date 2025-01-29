@@ -5,6 +5,12 @@ plugins {
     id "dev.flutter.flutter-gradle-plugin"
 }
 
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
 android {
     namespace = "com.example.flutterfly"
     compileSdk = flutter.compileSdkVersion
@@ -28,9 +34,23 @@ android {
         versionName = flutter.versionName
     }
 
+    signingConfigs {
+        release {
+            if (keystorePropertiesFile.exists()) {
+                keyAlias keystoreProperties['KEY_ALIAS']
+                keyPassword keystoreProperties['KEY_PASSWORD']
+                storePassword keystoreProperties['STORE_PASSWORD']
+                storeFile keystoreProperties['STORE_FILE'] ? file(keystoreProperties['STORE_FILE']) : null
+            }
+        }
+    }
+
     buildTypes {
         release {
-            signingConfig = signingConfigs.debug
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig = signingConfigs.release
         }
     }
 
@@ -43,7 +63,7 @@ android {
             versionNameSuffix "-dev"
         }
         staging {
-            dimension "env"
+            dimension "environment"
             applicationIdSuffix ".staging"
             versionNameSuffix "-staging"
         }
