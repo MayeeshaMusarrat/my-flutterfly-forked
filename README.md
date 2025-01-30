@@ -28,7 +28,24 @@
     <a href="https://github.com/Learnathon-By-Geeky-Solutions/flutterfly/issues/new?labels=enhancement&template=feature-request.md">Request Feature</a>
 </p>
 
+<details>
+  <summary>📖 Table of Contents</summary>
 
+- <a href="#wiki">➡️ Visit Our Wiki</a>
+- <a href="#problem">⚠️ Problem Statement</a>
+- [📱 Features](#-features)
+- <a href="#wiki">➡️ Visit Our Wiki</a>
+- [🚀 Getting Started](#-getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+    - [Setting Up Flavors](#setting-up-flavors)
+- <a href="#license">⚖️ License</a>
+- [🌟 Top Contributors](#-top-contributors)
+- <a href="#team">🦋 Team Information: Flutterfly</a>
+
+</details>
+
+<a id="wiki"></a>
 ## ➡️ Visit Our Wiki
 
 For comprehensive documentation, guides, and resources related to the Flutterfly project, please explore our [Wiki](https://github.com/Learnathon-By-Geeky-Solutions/flutterfly/wiki). It provides in-depth insights to help you understand and contribute effectively.
@@ -39,7 +56,7 @@ For comprehensive documentation, guides, and resources related to the Flutterfly
   </a>
 </div>
 
-
+<a id="problem"></a>
 ## ⚠️ Problem Statement
 Problem statement
 
@@ -52,6 +69,7 @@ Problem statement
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<a id="tech"></a>
 ## ⚒️ Technology Stack
 This section lists the major frameworks/tools used to bootstrap this project.
 
@@ -99,18 +117,18 @@ flutter doctor
 
 4. **Run the app**:
    Use the following commands to run the app for specific flavors:
-   - **Development**:
-     ```sh
-     flutter run --flavor dev 
-     ```
-   - **Staging**:
-     ```sh
-     flutter run --flavor staging 
-     ```
-   - **Production**:
-     ```sh
-     flutter run --flavor prod
-     ```
+    - **Development**:
+      ```sh
+      flutter run --flavor dev 
+      ```
+    - **Staging**:
+      ```sh
+      flutter run --flavor staging 
+      ```
+    - **Production**:
+      ```sh
+      flutter run --flavor prod
+      ```
 
 ### Setting Up Flavors
 The Flutterfly project is configured with multiple flavors to manage environments effectively. Each flavor has its corresponding configuration in the `android` folder.
@@ -138,7 +156,7 @@ The Flutterfly project is configured with multiple flavors to manage environment
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
+<a id="license"></a>
 <!-- LICENSE -->
 ## ⚖️ License
 
@@ -154,6 +172,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<a id="team"></a>
 ## 🦋 Team Information: Flutterfly
 
 | Name              | Role        | GitHub Username                      |
