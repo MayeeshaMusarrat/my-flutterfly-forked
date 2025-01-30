@@ -53,3 +53,6 @@ env/
 
 # Keys
 /android/key.properties
+
+#others
+/debug-info
