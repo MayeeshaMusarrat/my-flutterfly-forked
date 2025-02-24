@@ -21,11 +21,6 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      routes: {
-        '/reg': (context) => const RegistrationPage(),
-        '/dashboard': (context) => const DashboardScreen(),
-        '/login': (context) => const LoginScreen(),
-      },
       home: Scaffold(
         body: RegistrationPage()
       ),
