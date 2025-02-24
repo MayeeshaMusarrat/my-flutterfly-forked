@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutterfly/authentication/presentation/registration.dart';
+import 'package:flutterfly/authentication/presentation/pages/registration.dart';
 import 'package:flutterfly/utils/theme/theme.dart';
-import 'authentication/presentation/dashboard.dart';
+import 'authentication/presentation/pages/dashboard.dart';
+import 'authentication/presentation/pages/login.dart';
 import 'config/app_config.dart';
-import 'config/environment.dart';
+//import 'config/environment.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -11,7 +12,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    String appEnv = Environment.flavorName;
+    //String appEnv = Environment.flavorName;
     String appName = AppConfig.appName;
 
     return MaterialApp(
@@ -23,6 +24,7 @@ class App extends StatelessWidget {
       routes: {
         '/reg': (context) => const RegistrationPage(),
         '/dashboard': (context) => const DashboardScreen(),
+        '/login': (context) => const LoginScreen(),
       },
       home: Scaffold(
         body: RegistrationPage()
